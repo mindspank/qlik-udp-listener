@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<configuration>
+    <appender name="NodeUserLogger" type="log4net.Appender.UdpAppender">
+        <param name="remoteAddress" value="localhost" />
+        <param name="remotePort" value="9998" />
+        <layout type="log4net.Layout.PatternLayout">
+            <param name="conversionpattern" value="/activity/;%property{Command};%property{UserDirectory};%property{UserId}" />
+        </layout>
+    </appender>
+    <appender name="NodeSecurityLogger" type="log4net.Appender.UdpAppender">
+        <param name="remoteAddress" value="localhost" />
+        <param name="remotePort" value="9998" />
+        <layout type="log4net.Layout.PatternLayout">
+            <param name="conversionpattern" value="/security/;%property{Command};%property{UserDirectory};%property{UserId};%property{ClientHostAddress}" />
+        </layout>
+    </appender>
+   <logger name="AuditActivity.Proxy">
+      <appender-ref ref="NodeUserLogger" />
+   </logger>
+   <logger name="AuditSecurity.Proxy">
+      <appender-ref ref="NodeSecurityLogger" />
+   </logger>
+</configuration>

@@ -1,0 +1,86 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #1B3149;
+    color: #ddd;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    
+    svg {
+        fill: transparent;
+        path {
+            fill: #294A64;
+            stroke: #294A64;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            cursor: pointer;
+        }
+    }
+    
+    
+}
+
+#heading {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: arial;
+    color: #f7f7f7;
+    
+    h2 {
+        font-size: 4.2em;
+        margin: 0;
+        letter-spacing: 3px;
+    }
+    p {
+        font-size: 2.9em;
+        margin: 0;
+        margin-top: -5px;
+        letter-spacing: 5px;
+    }
+    
+}
+
+#sub-heading {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: arial;
+
+    p {
+        font-size: 1em;
+        color: #ddd;
+        margin: 0;
+    }
+    
+}
+
+.sessionmarker {
+    animation: pulsate 2.5s linear;
+    animation-iteration-count: infinite; 
+    stroke: #FF9800;
+    stroke-opacity: 1;
+    stroke-linecap: round;
+};
+
+.sessionmarker-week {
+    stroke: #FF9800;
+    stroke-opacity: 0.8;
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+};
+
+@keyframes pulsate {
+    0% { stroke-width: 4px; opacity: 0.7; }
+    50% { stroke-width: 10px; opacity: 1; }
+    100% { stroke-width: 4px; opacity: 0.7; }
+}
